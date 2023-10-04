@@ -11,7 +11,7 @@ https://desolate-falls-16374-71dff245c8d9.herokuapp.com/
 
 ## Credits
 
-Front-end starter code by Xandromus: https://github.com/coding-boot-camp/cautious-meme
+Starter code by Xandromus: https://github.com/coding-boot-camp/cautious-meme
 
 This repo was created as part of the University of Richmond Coding Bootcamp coursework.
 
