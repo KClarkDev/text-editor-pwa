@@ -15,28 +15,27 @@ const initdb = async () =>
 // Function to add content to the database
 export const putDb = async (content) => {
   try {
-    const db = await initdb();
+    const db = await openDB("jate", 1);
     const tx = db.transaction("jate", "readwrite");
     const store = tx.objectStore("jate");
-    await store.add(content);
-    await tx.done;
+    const request = store.put({ value: content, id: 1 });
+    await request;
     console.log("Content added to the database");
   } catch (error) {
-    console.error("putDb not implemented");
+    console.error("Error adding content to the database:", error);
   }
 };
 
 // Function to get all content from the database
 export const getDb = async () => {
   try {
-    const db = await initdb();
+    const db = await openDb("jate", 1);
     const tx = db.transaction("jate", "readonly");
     const store = tx.objectStore("jate");
-    const content = await store.getAll();
-    await tx.done;
-    return content;
+    const content = store.getAll();
+    await content;
   } catch (error) {
-    console.error("getDb not implemented");
+    console.error("Could not get content from the database:", error);
   }
 };
 
